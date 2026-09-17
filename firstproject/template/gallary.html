@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Story | Bageecha Resort</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bageecha: {
+                            base: '#004e36',
+                            card: '#003b29',
+                            cream: '#fffdd0',
+                            gold: '#D4AF37',
+                            goldHover: '#b5952f'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Khand', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gallery-item { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-item.hidden-item { display: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-bageecha-base text-bageecha-cream font-body antialiased selection:bg-bageecha-gold selection:text-bageecha-base">
+
+    <div id="header-placeholder"></div>
+
+    <section class="relative h-[65vh] flex flex-col justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-fixed" 
+             style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-bageecha-base"></div>
+        
+        <div class="relative z-10 text-center px-6 pt-24 animate-fade-in-up">
+            <span class="inline-block py-1.5 px-4 border border-bageecha-cream/40 rounded-full text-bageecha-cream text-[10px] tracking-[0.3em] uppercase mb-6 backdrop-blur-sm">
+                Our Portfolio
+            </span>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-bageecha-cream leading-none drop-shadow-2xl">
+                A Visual<br>Odyssey
+            </h1>
+        </div>
+    </section>
+
+    <section class="relative pb-16 pt-8 px-6 text-center bg-bageecha-base">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="flex items-center justify-center gap-4 mb-6 opacity-70">
+                <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-bageecha-gold"></div>
+                <i class="fas fa-camera text-bageecha-gold text-lg"></i>
+                <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-bageecha-gold"></div>
+            </div>
+
+            <h2 class="font-display text-4xl md:text-5xl text-bageecha-cream uppercase mb-4 leading-tight">
+                Moments <span class="text-bageecha-gold">Frozen</span> in Time
+            </h2>
+
+            <p class="text-lg md:text-xl font-light text-bageecha-cream/80 leading-relaxed font-body mb-6">
+                "Bageecha is not just a place to stay; it is a canvas of ever-changing light and shadow. Every corner tells a story of nature, heritage, and the quiet luxury of pause."
+            </p>
+
+            <div class="text-bageecha-gold/50 font-display tracking-[0.3em] text-[10px] uppercase">
+                Through The Lens
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-bageecha-base min-h-screen border-t border-bageecha-gold/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button onclick="filterGallery('all')" class="filter-btn active px-6 py-2 border border-bageecha-gold bg-bageecha-gold text-bageecha-base uppercase font-bold tracking-widest text-xs rounded-full hover:bg-white transition-all duration-300">All</button>
+                <button onclick="filterGallery('stays')" class="filter-btn px-6 py-2 border border-bageecha-gold/30 text-bageecha-cream uppercase font-bold tracking-widest text-xs rounded-full hover:border-bageecha-gold hover:text-bageecha-gold transition-all duration-300">Stays</button>
+                <button onclick="filterGallery('dining')" class="filter-btn px-6 py-2 border border-bageecha-gold/30 text-bageecha-cream uppercase font-bold tracking-widest text-xs rounded-full hover:border-bageecha-gold hover:text-bageecha-gold transition-all duration-300">Dining</button>
+                <button onclick="filterGallery('nature')" class="filter-btn px-6 py-2 border border-bageecha-gold/30 text-bageecha-cream uppercase font-bold tracking-widest text-xs rounded-full hover:border-bageecha-gold hover:text-bageecha-gold transition-all duration-300">Nature</button>
+                <button onclick="filterGallery('events')" class="filter-btn px-6 py-2 border border-bageecha-gold/30 text-bageecha-cream uppercase font-bold tracking-widest text-xs rounded-full hover:border-bageecha-gold hover:text-bageecha-gold transition-all duration-300">Events</button>
+            </div>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid">
+                <div class="gallery-item nature group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item stays group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item dining group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item events group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item stays group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item nature group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1621459521369-1c609514755d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item dining group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item nature group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1335&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+                <div class="gallery-item stays group break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1025&q=80" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-expand text-2xl text-bageecha-gold"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative h-[550px] flex items-center justify-center bg-fixed bg-center bg-cover group overflow-hidden" 
+             style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+        
+        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-700"></div>
+        
+        <div class="relative z-10 flex flex-col items-center justify-center">
+            
+            <div class="relative mb-8 cursor-pointer group/btn">
+                <div class="absolute inset-0 bg-bageecha-gold rounded-full opacity-20 animate-ping"></div>
+                <div class="absolute -inset-4 border border-bageecha-cream/30 rounded-full scale-100 group-hover/btn:scale-110 transition-transform duration-500"></div>
+                
+                <button class="relative w-20 h-20 rounded-full bg-bageecha-gold text-bageecha-base flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)] group-hover/btn:scale-110 group-hover/btn:bg-white group-hover/btn:text-bageecha-gold transition-all duration-300">
+                    <i class="fas fa-play text-2xl ml-1"></i>
+                </button>
+            </div>
+
+            <div class="text-center space-y-2">
+                <span class="text-bageecha-gold text-xs font-bold tracking-[0.4em] uppercase block opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">Watch Trailer</span>
+                <h3 class="font-display text-4xl md:text-5xl text-bageecha-cream uppercase tracking-wider drop-shadow-lg">Experience the Silence</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-24 px-6 border-t border-bageecha-gold/10 bg-bageecha-base overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-bageecha-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-bageecha-gold tracking-[0.3em] uppercase text-xs font-bold font-body mb-3 block">Shoot Friendly</span>
+                <h2 class="font-display text-4xl md:text-5xl text-bageecha-cream uppercase">For Creators</h2>
+                <div class="w-20 h-0.5 bg-bageecha-gold mx-auto mt-6 rounded-full opacity-50"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-camera text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Pre-Wedding</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-video text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Commercials</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-helicopter text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Drone Permit</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-tshirt text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Changing Room</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-lightbulb text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Power Supply</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-coffee text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Crew Catering</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#003b29] border-t border-bageecha-gold/10 relative">
+    
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
+            <div class="inline-flex items-center gap-2 border border-bageecha-gold/30 px-6 py-2 rounded-full text-bageecha-gold mb-6 bg-[#002f20]">
+                <i class="fab fa-instagram"></i>
+                <span class="text-xs font-bold tracking-widest uppercase">@BageechaResort</span>
+            </div>
+            <h2 class="font-display text-4xl text-bageecha-cream uppercase">As Seen On Social</h2>
+            <p class="text-bageecha-cream/60 mt-2 text-sm"><i class="fas fa-hand-pointer mr-2 animate-bounce"></i>Drag to explore the gallery</p>
+        </div>
+        
+        <div class="relative w-full overflow-hidden">
+            
+            <div class="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-[#003b29] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#003b29] to-transparent z-10 pointer-events-none"></div>
+
+            <div id="social-track" class="flex gap-6 overflow-x-hidden cursor-grab active:cursor-grabbing py-4 select-none no-scrollbar">
+                <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1517175782509-3543997f017e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+                 <div class="social-item w-72 h-96 relative shrink-0 rounded-2xl overflow-hidden border-4 border-bageecha-base shadow-2xl group transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover pointer-events-none">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 text-center px-6 relative bg-bageecha-base overflow-hidden">
+        
+        <div class="absolute inset-0 pattern-bg opacity-10 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-bageecha-gold/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto">
+            
+            <div class="flex items-center justify-center gap-3 mb-6 opacity-60">
+                <div class="h-[1px] w-10 bg-gradient-to-r from-transparent to-bageecha-gold"></div>
+                <i class="fas fa-leaf text-bageecha-gold text-sm"></i>
+                <div class="h-[1px] w-10 bg-gradient-to-l from-transparent to-bageecha-gold"></div>
+            </div>
+
+            <h2 class="font-display text-4xl md:text-6xl text-bageecha-cream uppercase mb-4 leading-none drop-shadow-xl">
+                Don't Just Watch,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-bageecha-gold to-[#fcf6ba]">Live The Story</span>
+            </h2>
+
+            <p class="text-base md:text-lg text-bageecha-cream/70 font-light font-body mb-8">
+                Come, experience the silence and hospitality that photos cannot capture.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#booking" class="px-8 py-3 bg-bageecha-gold text-bageecha-base uppercase font-bold tracking-[0.2em] font-display text-xs rounded-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
+                    Book Your Stay
+                </a>
+                <a href="index.html#contact" class="px-8 py-3 border border-bageecha-gold/30 text-bageecha-cream uppercase font-bold tracking-[0.2em] font-display text-xs hover:border-bageecha-gold hover:text-bageecha-gold transition-all rounded-sm">
+                    Talk to Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-bageecha-gold hover:text-white text-4xl z-[101]">&times;</button>
+        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[95vw] rounded shadow-2xl scale-95 transition-transform duration-300">
+        <div id="lightbox-caption" class="absolute bottom-6 left-0 w-full text-center text-bageecha-cream font-display text-xl tracking-widest uppercase"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

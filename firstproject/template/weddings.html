@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Weddings | Bageecha Resort</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bageecha: {
+                            base: '#004e36',
+                            card: '#003b29',
+                            cream: '#fffdd0',
+                            gold: '#D4AF37',
+                            goldHover: '#b5952f'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Khand', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'wedding-hero': "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')",
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bageecha-base text-bageecha-cream font-body antialiased selection:bg-bageecha-gold selection:text-bageecha-base">
+
+    <div id="header-placeholder"></div>
+
+    <section class="relative h-[70vh] flex flex-col justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 bg-wedding-hero bg-cover bg-center bg-fixed"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-bageecha-base"></div>
+        
+        <div class="relative z-10 text-center px-6 pt-24 animate-fade-in-up">
+            <span class="inline-block py-1.5 px-4 border border-bageecha-cream/40 rounded-full text-bageecha-cream text-[10px] tracking-[0.3em] uppercase mb-6 backdrop-blur-sm">
+                Celebrations
+            </span>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-bageecha-cream leading-none drop-shadow-2xl">
+                Vows Under<br>The Banyan
+            </h1>
+        </div>
+    </section>
+
+    <section class="relative pb-16 pt-8 px-6 text-center bg-bageecha-base">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex items-center justify-center gap-4 mb-6 opacity-70">
+                <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-bageecha-gold"></div>
+                <i class="fas fa-heart text-bageecha-gold text-lg"></i>
+                <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-bageecha-gold"></div>
+            </div>
+            <h2 class="font-display text-4xl md:text-5xl text-bageecha-cream uppercase mb-4 leading-tight">
+                Not Just An Event,<br> A <span class="text-bageecha-gold">Legacy</span>
+            </h2>
+            <p class="text-lg md:text-xl font-light text-bageecha-cream/80 leading-relaxed font-body mb-6">
+                "We believe weddings should be as timeless as the trees that surround us. Away from the city's chaos, Bageecha offers a canvas where rustic charm meets regal hospitality."
+            </p>
+            <div class="text-bageecha-gold/50 font-display tracking-[0.3em] text-[10px] uppercase">
+                The Bageecha Wedding
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#003b29] border-t border-bageecha-gold/10">
+        <div class="max-w-7xl mx-auto space-y-24">
+            
+            <div class="text-center mb-16">
+                <h2 class="font-display text-5xl text-bageecha-cream uppercase">Our Venues</h2>
+                <p class="text-bageecha-cream/60 mt-2">Spaces designed for magical moments.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-8">
+                    <div>
+                        <span class="text-bageecha-gold text-xs tracking-widest uppercase font-bold"><i class="fas fa-users mr-2"></i>Up to 600 Guests</span>
+                        <h3 class="font-display text-5xl text-bageecha-cream uppercase mt-2">The Orchard Lawn</h3>
+                    </div>
+                    <p class="text-bageecha-cream/70 font-light leading-relaxed text-lg">
+                        Our largest open-air venue, surrounded by ancient mango trees. A sprawling green carpet perfect for the main wedding ceremony and grand reception beneath the stars.
+                    </p>
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8 py-6 border-y border-bageecha-gold/10 font-display tracking-wide text-lg text-bageecha-cream/90">
+                        <div class="flex items-center gap-3"><i class="fas fa-moon text-bageecha-gold text-sm"></i> Open-Air Setting</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-music text-bageecha-gold text-sm"></i> Live Band Ready</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-utensils text-bageecha-gold text-sm"></i> Grand Buffet Area</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-bolt text-bageecha-gold text-sm"></i> Power Backup</div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 h-[500px] overflow-hidden rounded-2xl shadow-2xl relative group border border-bageecha-gold/20">
+                     <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                     <div class="absolute bottom-6 left-6">
+                        <span class="bg-bageecha-gold/90 text-bageecha-base px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-md backdrop-blur-sm">The Main Event</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-1 h-[500px] overflow-hidden rounded-2xl shadow-2xl relative group border border-bageecha-gold/20">
+                     <img src="https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                     <div class="absolute bottom-6 left-6">
+                        <span class="bg-bageecha-gold/90 text-bageecha-base px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-md backdrop-blur-sm">Haldi & Mehendi</span>
+                    </div>
+                </div>
+                <div class="order-2 space-y-8">
+                     <div>
+                        <span class="text-bageecha-gold text-xs tracking-widest uppercase font-bold"><i class="fas fa-users mr-2"></i>Up to 150 Guests</span>
+                        <h3 class="font-display text-5xl text-bageecha-cream uppercase mt-2">Stone Courtyard</h3>
+                    </div>
+                    <p class="text-bageecha-cream/70 font-light leading-relaxed text-lg">
+                        An intimate, rustic space featuring reclaimed stone architecture and a central water body. It is the ideal setting for vibrant functions like Haldi, Mehendi, or Sangeet.
+                    </p>
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8 py-6 border-y border-bageecha-gold/10 font-display tracking-wide text-lg text-bageecha-cream/90">
+                        <div class="flex items-center gap-3"><i class="fas fa-sun text-bageecha-gold text-sm"></i> Day/Night Events</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-palette text-bageecha-gold text-sm"></i> Vibrant Decor</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-camera text-bageecha-gold text-sm"></i> Photogenic Corners</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-glass-cheers text-bageecha-gold text-sm"></i> Bar Setup Area</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-bageecha-base pattern-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-bageecha-gold tracking-[0.3em] uppercase text-xs font-bold mb-2 block">Themes</span>
+                <h2 class="font-display text-5xl text-bageecha-cream uppercase">Curated Celebrations</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-bageecha-card border border-bageecha-gold/20 p-8 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1522673607200-1645062cd958?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-display text-3xl text-bageecha-cream uppercase mb-2">The Royal Rustic</h3>
+                    <p class="text-sm text-bageecha-cream/60 mb-6 font-light leading-relaxed">
+                        A grand celebration with marigold showers, traditional folk dancers, and a royal Rajasthani feast.
+                    </p>
+                    <span class="text-bageecha-gold text-xs font-bold uppercase tracking-widest border-b border-bageecha-gold pb-1">View Details</span>
+                </div>
+                <div class="bg-bageecha-card border border-bageecha-gold/20 p-8 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-display text-3xl text-bageecha-cream uppercase mb-2">Boho Chic</h3>
+                    <p class="text-sm text-bageecha-cream/60 mb-6 font-light leading-relaxed">
+                        Fairy lights, pastel decor, macrame backdrops, and acoustic music for a modern, relaxed vibe.
+                    </p>
+                    <span class="text-bageecha-gold text-xs font-bold uppercase tracking-widest border-b border-bageecha-gold pb-1">View Details</span>
+                </div>
+                <div class="bg-bageecha-card border border-bageecha-gold/20 p-8 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-display text-3xl text-bageecha-cream uppercase mb-2">Eco-Wedding</h3>
+                    <p class="text-sm text-bageecha-cream/60 mb-6 font-light leading-relaxed">
+                        Zero-waste celebration with organic catering, potted plants as favors, and sustainable decor.
+                    </p>
+                    <span class="text-bageecha-gold text-xs font-bold uppercase tracking-widest border-b border-bageecha-gold pb-1">View Details</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#003b29] border-t border-bageecha-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-bageecha-gold tracking-[0.3em] uppercase text-xs font-bold mb-2 block">Vibe & Spirit</span>
+                <h2 class="font-display text-5xl text-bageecha-cream uppercase">Entertainment</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-bageecha-base p-8 border border-bageecha-gold/10 rounded-xl hover:border-bageecha-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-bageecha-card rounded-full flex items-center justify-center mb-6 border border-bageecha-gold/20 group-hover:scale-110 transition">
+                        <i class="fas fa-drum text-2xl text-bageecha-gold"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-3">Live Shehnai</h3>
+                    <p class="text-sm text-bageecha-cream/60">Traditional welcome music to set the auspicious tone for your guests.</p>
+                </div>
+                <div class="bg-bageecha-base p-8 border border-bageecha-gold/10 rounded-xl hover:border-bageecha-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-bageecha-card rounded-full flex items-center justify-center mb-6 border border-bageecha-gold/20 group-hover:scale-110 transition">
+                        <i class="fas fa-music text-2xl text-bageecha-gold"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-3">Folk Dancers</h3>
+                    <p class="text-sm text-bageecha-cream/60">Kalbeliya or Ghoomar dancers to entertain guests during Sangeet or dinner.</p>
+                </div>
+                <div class="bg-bageecha-base p-8 border border-bageecha-gold/10 rounded-xl hover:border-bageecha-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-bageecha-card rounded-full flex items-center justify-center mb-6 border border-bageecha-gold/20 group-hover:scale-110 transition">
+                        <i class="fas fa-car text-2xl text-bageecha-gold"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-3">Vintage Entry</h3>
+                    <p class="text-sm text-bageecha-cream/60">Grand entry for the bride and groom in a classic vintage car or horse carriage.</p>
+                </div>
+                <div class="bg-bageecha-base p-8 border border-bageecha-gold/10 rounded-xl hover:border-bageecha-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-bageecha-card rounded-full flex items-center justify-center mb-6 border border-bageecha-gold/20 group-hover:scale-110 transition">
+                        <i class="fas fa-bolt text-2xl text-bageecha-gold"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-3">Cold Pyro</h3>
+                    <p class="text-sm text-bageecha-cream/60">Safe and stunning cold fireworks for the Varmala moment or First Dance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-0 relative bg-[#002f20] border-t border-bageecha-gold/10 overflow-hidden">
+        
+        <div class="absolute top-0 left-0 w-full h-full pattern-bg opacity-5 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 mb-10 flex flex-col md:flex-row justify-between items-end gap-6 relative z-10">
+            <div>
+                <span class="text-bageecha-gold tracking-[0.3em] uppercase text-xs font-bold mb-2 block">Photography</span>
+                <h2 class="font-display text-4xl text-bageecha-cream uppercase leading-none">Captured Moments</h2>
+            </div>
+            <div class="flex gap-4">
+                <button id="carousel-left" class="group w-12 h-12 rounded-full border border-bageecha-gold/20 hover:border-bageecha-gold hover:bg-bageecha-gold transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-arrow-left text-bageecha-gold group-hover:text-bageecha-base transition-colors"></i>
+                </button>
+                <button id="carousel-right" class="group w-12 h-12 rounded-full border border-bageecha-gold/20 hover:border-bageecha-gold hover:bg-bageecha-gold transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-arrow-right text-bageecha-gold group-hover:text-bageecha-base transition-colors"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="room-carousel" class="flex overflow-x-auto gap-6 px-6 pb-12 snap-x snap-mandatory scroll-smooth no-scrollbar relative z-10">
+            
+            <div class="min-w-[85vw] md:min-w-[300px] h-[400px] snap-center relative group rounded-xl overflow-hidden cursor-default border border-bageecha-gold/10 hover:border-bageecha-gold/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1511285560982-1356c11d4606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#002f20] via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-1">Pre-Wedding</h3>
+                    <div class="h-[1px] w-8 bg-bageecha-gold mb-2 group-hover:w-16 transition-all duration-700"></div>
+                    <p class="text-[10px] text-bageecha-cream/80 font-light tracking-widest uppercase">Romantic Shoots</p>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[300px] h-[400px] snap-center relative group rounded-xl overflow-hidden cursor-default border border-bageecha-gold/10 hover:border-bageecha-gold/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#002f20] via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-1">Table Styling</h3>
+                    <div class="h-[1px] w-8 bg-bageecha-gold mb-2 group-hover:w-16 transition-all duration-700"></div>
+                    <p class="text-[10px] text-bageecha-cream/80 font-light tracking-widest uppercase">Elegant Setups</p>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[300px] h-[400px] snap-center relative group rounded-xl overflow-hidden cursor-default border border-bageecha-gold/10 hover:border-bageecha-gold/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#002f20] via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-1">Night Decor</h3>
+                    <div class="h-[1px] w-8 bg-bageecha-gold mb-2 group-hover:w-16 transition-all duration-700"></div>
+                    <p class="text-[10px] text-bageecha-cream/80 font-light tracking-widest uppercase">Lights & Magic</p>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[300px] h-[400px] snap-center relative group rounded-xl overflow-hidden cursor-default border border-bageecha-gold/10 hover:border-bageecha-gold/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#002f20] via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-1">Mandap</h3>
+                    <div class="h-[1px] w-8 bg-bageecha-gold mb-2 group-hover:w-16 transition-all duration-700"></div>
+                    <p class="text-[10px] text-bageecha-cream/80 font-light tracking-widest uppercase">Sacred Spaces</p>
+                </div>
+            </div>
+
+            <div class="min-w-[85vw] md:min-w-[300px] h-[400px] snap-center relative group rounded-xl overflow-hidden cursor-default border border-bageecha-gold/10 hover:border-bageecha-gold/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#002f20] via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="font-display text-2xl text-bageecha-cream uppercase mb-1">Bridal Portraits</h3>
+                    <div class="h-[1px] w-8 bg-bageecha-gold mb-2 group-hover:w-16 transition-all duration-700"></div>
+                    <p class="text-[10px] text-bageecha-cream/80 font-light tracking-widest uppercase">Candid Moments</p>
+                </div>
+            </div>
+
+            <div class="min-w-[2vw]"></div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-bageecha-base relative overflow-hidden border-t border-bageecha-gold/10">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-bageecha-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-bageecha-gold tracking-[0.3em] uppercase text-xs font-bold font-body mb-3 block">Facilities</span>
+                <h2 class="font-display text-4xl md:text-5xl text-bageecha-cream uppercase">Wedding Logistics</h2>
+                <div class="w-20 h-0.5 bg-bageecha-gold mx-auto mt-6 rounded-full opacity-50"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-couch text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Bridal Suite</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-parking text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Valet Parking</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-bolt text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">100% Power Backup</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-user-shield text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Event Security</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-truck text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Vendor Entry</span>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-bageecha-gold/10 bg-bageecha-card hover:bg-bageecha-card/80 transition-all duration-300 flex flex-col items-center justify-center gap-4 text-center cursor-default hover:shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    <div class="w-12 h-12 rounded-full bg-bageecha-base flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-bageecha-gold/20">
+                        <i class="fas fa-music text-xl text-bageecha-gold"></i>
+                    </div>
+                    <span class="text-sm text-bageecha-cream font-display tracking-widest uppercase">Music Permit</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#002f20] border-t border-bageecha-gold/10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-4xl text-bageecha-cream uppercase mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-bageecha-base rounded-lg border border-bageecha-gold/10 overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-white/5 transition">
+                        <span class="font-display text-xl text-bageecha-cream uppercase tracking-wide">What is the guest capacity?</span>
+                        <span class="transition group-open:rotate-180 text-bageecha-gold"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-bageecha-cream/70 font-light text-sm leading-relaxed">
+                        We can accommodate up to 600 guests in our Orchard Lawn for the main event, and we have 45 rooms available for resident guests.
+                    </div>
+                </details>
+                <details class="group bg-bageecha-base rounded-lg border border-bageecha-gold/10 overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-white/5 transition">
+                        <span class="font-display text-xl text-bageecha-cream uppercase tracking-wide">Is outside catering allowed?</span>
+                        <span class="transition group-open:rotate-180 text-bageecha-gold"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-bageecha-cream/70 font-light text-sm leading-relaxed">
+                        To maintain our quality standards and farm-to-table philosophy, all catering is provided in-house by our expert chefs.
+                    </div>
+                </details>
+                <details class="group bg-bageecha-base rounded-lg border border-bageecha-gold/10 overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-white/5 transition">
+                        <span class="font-display text-xl text-bageecha-cream uppercase tracking-wide">Do you provide decor services?</span>
+                        <span class="transition group-open:rotate-180 text-bageecha-gold"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-bageecha-cream/70 font-light text-sm leading-relaxed">
+                        Yes, we have an in-house decor team specializing in sustainable and rustic themes. However, we also allow empanelled outside decorators.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 text-center px-6 relative bg-bageecha-base overflow-hidden">
+        <div class="absolute inset-0 pattern-bg opacity-10 pointer-events-none"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h2 class="font-display text-6xl text-bageecha-cream uppercase mb-8 leading-none">Begin Your Forever</h2>
+            <p class="text-bageecha-cream/80 mb-12 font-body font-light text-xl leading-relaxed">
+                Our wedding dates fill up 12-18 months in advance. Connect with our wedding specialists today.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <button class="px-12 py-5 border-2 border-bageecha-gold text-bageecha-gold hover:bg-bageecha-gold hover:text-bageecha-base transition-all duration-300 uppercase font-bold tracking-[0.2em] font-display text-sm rounded-sm">
+                    Download Brochure <i class="fas fa-download ml-3"></i>
+                </button>
+                <a href="index.html#contact" class="px-12 py-5 bg-bageecha-gold text-bageecha-base hover:bg-white transition-all duration-300 uppercase font-bold tracking-[0.2em] font-display text-sm shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] rounded-sm">
+                    Inquire Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
