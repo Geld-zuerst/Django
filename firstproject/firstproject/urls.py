@@ -26,5 +26,4 @@ urlpatterns = [
     path('gallary/',views.gallary,name='gallary'),
     path('aminities/',views.aminities,name='aminities'),
     path('weddings/',views.weddings,name='weddings'),
-    path('first/', include('first.urls'))
 ]
